@@ -9,19 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 import static liqp.LValue.BREAK;
 import static liqp.LValue.CONTINUE;
 import static liqp.LValue.asTemporal;
 import static liqp.LValue.isTemporal;
 import static liqp.LValue.rubyDateTimeFormat;
-import static liqp.constants.Constants.EMPTY_STRING;
 
 public class BlockNode implements LNode {
 
     private List<LNode> children;
     private final boolean isRootBlock;
+    private final String EMPTY_STRING = "";
 
     public BlockNode() {
         this(false);

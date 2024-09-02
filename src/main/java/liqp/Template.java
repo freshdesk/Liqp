@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import liqp.constants.Constants;
 import liqp.exceptions.LiquidException;
 import liqp.filters.Filter;
 import liqp.nodes.BlockNode;
@@ -606,7 +605,7 @@ public class Template {
         Matcher placeholderMatcher = null;
 
         try {
-            placeholderMatcher = matchPlaceholders(inputString);
+            //placeholderMatcher = matchPlaceholders(inputString);
         } catch (Exception exception) {
             logError("Returning empty string. Exception occurred while searching for placeholder strings: ", exception.getMessage());
             return "";
@@ -768,10 +767,5 @@ public class Template {
 
     private static void logError(String message, String exceptionMessage) {
         System.err.println(message + exceptionMessage);
-    }
-
-    private static Matcher matchPlaceholders(String inputString) {
-        Pattern pattern = Pattern.compile(Constants.PLACEHOLDER_PATTERN);
-        return pattern.matcher(inputString);
     }
 }
